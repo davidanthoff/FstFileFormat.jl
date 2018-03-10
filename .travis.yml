@@ -16,7 +16,7 @@ matrix:
   - julia: nightly
 
 env:
-  - R_LIBS_USER = "~/R/library"
+  - R_LIBS_USER=~/R/Library
 ## uncomment and modify the following lines to manually install system packages
 #addons:
 #  apt: # apt-get for linux
@@ -35,6 +35,7 @@ before_install:
   # but no permalink to release download
   - if [ "$TRAVIS_OS_NAME" == "osx" ]; then wget "https://cran.rstudio.com/bin/macosx/$(wget -qO- https://cran.rstudio.com/bin/macosx/ | sed -n 's/.*href="\(R-[^"]*.pkg\)".*/\1/p' | head -n 1)"; fi
   - if [ "$TRAVIS_OS_NAME" == "osx" ]; then sudo installer -pkg R-*.pkg -target /; fi
+  - mkdir ~/R/Library; fi
 
 #before_script: # homebrew for mac
 #  - if [ $TRAVIS_OS_NAME = osx ]; then brew install gcc; fi
