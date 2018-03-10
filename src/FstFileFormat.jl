@@ -17,7 +17,7 @@ function install_fst()
   R"""print(.libPaths())"""
   R"""
     if(!require(fst)) {
-      install.packages("fst")
+      install.packages("fst", repos='https://cran.cnr.berkeley.edu/')
     }
   """
   println("STEP 1B")
