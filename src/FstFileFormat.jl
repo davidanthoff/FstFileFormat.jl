@@ -17,7 +17,7 @@ function install_fst()
   R"""print(.libPaths())"""
   R"""
     if(!require(fst)) {
-      install.packages("fst", repos="https://cloud.r-project.org")
+      install.packages("fst")
     }
   """
   println("STEP 1B")
